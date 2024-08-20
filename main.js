@@ -60,7 +60,6 @@ function clearData() {
   $("#taxes").val("");
   $("#discount").val("");
   $("#product-number").val("");
-
   $("#category").val("");
   $("#total").html("Total: ");
 }
@@ -153,8 +152,9 @@ function searchCategory() {
   var arr = filter(data, function (element) {
     return element.category === searched.val();
   });
-  console.log(arr);
 
   data = arr;
+
   displayData();
+  searched.val("");
 }
