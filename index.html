@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width= , initial-scale=1.0" />
+
     <title>stock management</title>
   </head>
   <body>
@@ -17,12 +22,42 @@
         <div class="price">
           <input type="number" id="price" placeholder="price" />
           <input type="number" id="taxes" placeholder="taxes" />
-          <input type="number" id="discount" placeholder="discount" />
-          <h6 id="total">1122</h6>
+          <input
+            type="number"
+            onkeyup="calclTotal()"
+            id="discount"
+            placeholder="discount"
+          />
+          <h4 id="total">total:</h4>
         </div>
-        <input type="text" placeholder="product number" id="product-number" />
+        <input type="number" placeholder="product number" id="product-number" />
         <input type="text" placeholder="category" id="category" />
-        <button>save</button>
+        <button id="add">add</button>
+      </div>
+      <div class="output">
+        <div class="search">
+          <input
+            id="searchCategory"
+            type="text"
+            placeholder="search with categoru"
+          />
+          <button id="btn-search">search with category</button>
+        </div>
+        <div id="deleteAll"></div>
+        <table>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>product number</th>
+            <th>category</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
       </div>
     </div>
     <script src="main.js"></script>
