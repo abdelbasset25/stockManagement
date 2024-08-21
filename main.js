@@ -18,7 +18,7 @@ var calclTotal = function () {
   var valueTaxes = Number($("#taxes").val());
   var valueDiscount = Number($("#discount").val());
 
-  if (valuePrice && valueTaxes && valueDiscount) {
+  if (valuePrice !== 0 && valueTaxes !== 0 && valueDiscount !== 0) {
     result = valuePrice + valueTaxes - valueDiscount;
     $("#total").empty();
     $("#total").append("total:  " + Number(result) + " $");
